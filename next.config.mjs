@@ -1,10 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
-    experimental: {
-      appDir: true,
-    },
-  };
+    // output: 'export'  ← REMOVE THIS if not doing static export
+  }
   
-  export default nextConfig;
-  
+  module.exports = nextConfig  
