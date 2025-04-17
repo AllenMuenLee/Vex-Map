@@ -1,7 +1,7 @@
-/** @type {import('next').NextConfig} */
+// next.config.mjs or next.config.js (placed in root folder)
 const nextConfig = {
     reactStrictMode: true,
-    // output: 'export'  ← REMOVE THIS if not doing static export
-  }
+    // do NOT use `output: 'export'`
+  };
   
-  module.exports = nextConfig  
+  export default nextConfig;  
