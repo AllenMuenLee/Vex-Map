@@ -79,7 +79,7 @@ export default function RectangleBlock({
               setTimeout(() => {
                 setFocusedParentId(rect.id);
                 setViewMode("default");
-              }, 700);
+              }, 1400);
               return;
             }
 
