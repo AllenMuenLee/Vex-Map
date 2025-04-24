@@ -135,58 +135,9 @@ export default function Sidebar({
         ))}
       </div>
 
-      {/* Sets */}
-      <h2 className="font-bold border-b border-gray-600 pt-4 pb-1">Sets</h2>
-      {Itemsets.map((set, i) => (
-        <div key={i} className="flex items-center justify-between gap-2 mb-2">
-          {isAdmin ? (
-            <>
-              <input
-                value={set.name}
-                onChange={(e) => {
-                  const newName = e.target.value;
-                  setItemsets((prev) =>
-                    prev.map((s, idx) => (idx === i ? { ...s, name: newName } : s))
-                  );
-                }}
-                className="w-full px-3 py-2 bg-gray-700 text-white rounded"
-              />
-              <button
-                onClick={() =>
-                  setItemsets((prev) => prev.filter((_, idx) => idx !== i))
-                }
-                className="text-red-400 hover:text-red-600 text-xl"
-                title="Delete set"
-              >
-                🗑️
-              </button>
-            </>
-          ) : (
-            <button
-              onClick={() => selectSet(set.name)}
-              className="bg-blue-700 hover:bg-blue-600 px-3 py-2 rounded text-left w-full mb-2"
-            >
-              {set.name}
-            </button>
-          )}
-        </div>
-      ))}
-
       {/* Admin Buttons */}
       {isAdmin && (
         <div className="space-y-2 border-t pt-4 border-gray-600 mt-8">
-          <button
-            onClick={addSet}
-            className="bg-indigo-700 hover:bg-indigo-600 w-full px-3 py-2 rounded"
-          >
-            ➕ Add Set
-          </button>
-          <button
-            onClick={() => setEditingSets(!editingSets)}
-            className="bg-yellow-700 hover:bg-yellow-600 w-full px-3 py-2 rounded"
-          >
-            🛠 Edit Sets
-          </button>
           <button
             onClick={addItem}
             className="bg-indigo-700 hover:bg-indigo-600 w-full px-3 py-2 rounded"
