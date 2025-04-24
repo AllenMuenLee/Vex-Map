@@ -92,7 +92,7 @@ export default function Sidebar({
 
       {/* Items / Parts */}
       <h2 className="font-bold border-b border-gray-600 pb-1">Parts</h2>
-      
+      <div className="overflow-y-auto max-h-64 pr-1">
         {Items.map((r, i) => (
           <div key={i} className="flex items-center justify-between gap-2 mb-2">
             {isAdmin ? (
@@ -133,7 +133,7 @@ export default function Sidebar({
             )}
           </div>
         ))}
-      
+      </div>
 
       {/* Admin Buttons */}
       {isAdmin && (
