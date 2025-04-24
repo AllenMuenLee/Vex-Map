@@ -92,46 +92,48 @@ export default function Sidebar({
 
       {/* Items / Parts */}
       <h2 className="font-bold border-b border-gray-600 pb-1">Parts</h2>
-      {Items.map((r, i) => (
-        <div key={i} className="flex items-center justify-between gap-2 mb-2">
-          {isAdmin ? (
-            <>
-              <input
-                value={r.id}
-                onChange={(e) => {
-                  const newId = e.target.value;
-                  setItems((prev) =>
-                    prev.map((it, idx) => (idx === i ? { ...it, id: newId } : it))
-                  );
-                }}
-                onClick={() => {
-                  setSelectedAreas([r.area]);
-                  setSelectedIds([r.id]);
-                }}
-                className="w-full px-3 py-2 bg-gray-700 text-white rounded border-b border-gray-5000"
-              />
+      <div className="overflow-y-auto max-h-64 pr-1">
+        {Items.map((r, i) => (
+          <div key={i} className="flex items-center justify-between gap-2 mb-2">
+            {isAdmin ? (
+              <>
+                <input
+                  value={r.id}
+                  onChange={(e) => {
+                    const newId = e.target.value;
+                    setItems((prev) =>
+                      prev.map((it, idx) => (idx === i ? { ...it, id: newId } : it))
+                    );
+                  }}
+                  onClick={() => {
+                    setSelectedAreas([r.area]);
+                    setSelectedIds([r.id]);
+                  }}
+                  className="w-full px-3 py-2 bg-gray-700 text-white rounded border-b border-gray-5000"
+                />
+                <button
+                  onClick={() =>
+                    setItems((prev) => prev.filter((_, idx) => idx !== i))
+                  }
+                  className="text-red-400 hover:text-red-600 text-xl"
+                  title="Delete item"
+                >
+                  🗑️
+                </button>
+              </>
+            ) : (
               <button
-                onClick={() =>
-                  setItems((prev) => prev.filter((_, idx) => idx !== i))
-                }
-                className="text-red-400 hover:text-red-600 text-xl"
-                title="Delete item"
+                onClick={() => {
+                  navigateToArea(r.area, r.id);
+                }}
+                className="bg-gray-700 hover:bg-gray-600 px-3 py-2 rounded text-left w-full"
               >
-                🗑️
+                {r.id}
               </button>
-            </>
-          ) : (
-            <button
-              onClick={() => {
-                navigateToArea(r.area, r.id);
-              }}
-              className="bg-gray-700 hover:bg-gray-600 px-3 py-2 rounded text-left w-full"
-            >
-              {r.id}
-            </button>
-          )}
-        </div>
-      ))}
+            )}
+          </div>
+        ))}
+      </div>
 
       {/* Sets */}
       <h2 className="font-bold border-b border-gray-600 pt-4 pb-1">Sets</h2>
