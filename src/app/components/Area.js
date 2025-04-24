@@ -79,7 +79,7 @@ export default function RectangleBlock({
               setTimeout(() => {
                 setFocusedParentId(rect.id);
                 setViewMode("default");
-              }, 1400);
+              }, 700);
               return;
             }
 
@@ -119,7 +119,7 @@ export default function RectangleBlock({
             opacity:
               (viewMode === "zooming-out") || (viewMode === "zooming-in") ? 0 : 1,
           }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          transition={{ duration: 2, ease: "easeInOut" }}
         style={{
             position: "absolute",
             cursor: isEditing ? "move" : "pointer",
