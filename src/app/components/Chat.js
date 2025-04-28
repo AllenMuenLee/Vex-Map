@@ -81,7 +81,7 @@ export default function ChatPanel({
                     em: ({ node, children }) => (
                       <span
                         onClick={(e) => {
-                            console.log(children);
+                            console.log(children.props.children);
                             setSearch(children.props.children);
                             handleSearchChange(children);
                             }}
