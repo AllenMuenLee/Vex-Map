@@ -134,13 +134,8 @@ export default function Home() {
   const handleSearchChange = (value) => {
     setSearch(value);
   
-    if (value.trim() === "") {
-      setSuggestions([]);
-    } else {
-      console.log()
-      const results = fuse.search(value);
-      setSuggestions(results.map(r => r.item)); // `item` is the actual object
-    }
+    const results = fuse.search(value);
+    setSuggestions(results.map(r => r.item)); // `item` is the actual object
   };
   
   const fuse = new Fuse(Items, {
