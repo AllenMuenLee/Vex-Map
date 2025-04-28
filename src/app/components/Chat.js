@@ -7,6 +7,7 @@ import Fuse from "fuse.js";
 export default function ChatPanel({
         setSearch,
         handleSearchChange,
+        search,
     }) {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([]);
@@ -82,7 +83,8 @@ export default function ChatPanel({
                       <span
                         onClick={(e) => {
                             console.log(children.props.children);
-                            setSearch(toString(children.props.children));
+                            setSearch(children.props.children);
+                            console.log(search)
                             handleSearchChange(children);
                             }}
                         className="text-yellow-300 cursor-pointer underline hover:text-yellow-400"

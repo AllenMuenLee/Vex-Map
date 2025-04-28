@@ -224,6 +224,7 @@ export default function Home() {
       <ChatPanel
       setSearch={setSearch}
       handleSearchChange={handleSearchChange}
+      search={search}
       />
     </div>
   );
