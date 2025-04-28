@@ -82,7 +82,7 @@ export default function ChatPanel({
                       <span
                         onClick={(e) => {
                             console.log(children);
-                            setSearch(children);
+                            setSearch(children.props.children);
                             handleSearchChange(children);
                             }}
                         className="text-yellow-300 cursor-pointer underline hover:text-yellow-400"
