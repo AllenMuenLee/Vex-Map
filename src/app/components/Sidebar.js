@@ -142,7 +142,7 @@ export default function Sidebar({
             onClick={addItem}
             className="bg-indigo-700 hover:bg-indigo-600 w-full px-3 py-2 rounded"
           >
-            ➕ Add Items
+            ➕ Add an Item
           </button>
             <button
                 onClick={() => {
@@ -172,7 +172,7 @@ export default function Sidebar({
                 }}
                 className="bg-green-700 hover:bg-green-600 px-3 py-2 rounded w-full"
                 >
-                ➕ Add Area
+                ➕ Add an Area
             </button>
         </div>
       )}
